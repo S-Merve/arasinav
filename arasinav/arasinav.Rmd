@@ -1,7 +1,7 @@
 ---
-title: "Çalışmanızın Başlığı"
+title: "Titanik Felaketinde Kim, Neden Hayatta Kaldı?"
 author: 
-  - İsim Soyisim[^1]
+  - Merve SERTBAKAN[^1]
 bibliography: ../bibliography/biblio.bib
 csl: ../csl/apa-tr.csl
 header-includes:
@@ -32,32 +32,34 @@ knitr::opts_chunk$set(cache = FALSE, echo = TRUE, message = FALSE, warning = FAL
 <!-- ======================================================================= -->
 <!-- ============================== NOTLAR ================================= -->
 <!-- ======================================================================= -->
-[^1]: Öğrenci Numarası, [Github Repo](https://github.com/KULLANICI_ADINIZ/REPO_ADINIZ)
-
-# Vize Hakkında Önemli Bilgiler
-
-\colorbox{BurntOrange}{GITHUB REPO BAĞLANTINIZI BU DOSYANIN 35. SATIRINA YAZINIZ!}
-
-**Proje önerisi gönderimi, Github repo linki ile birlikte ekampus sistemine bir zip dosyası yüklenerek yapılacaktır. Sisteme zip dosyası yüklemezseniz ve Github repo linki vermezseniz ara sınav ve final sınavlarına girmemiş sayılırsınız.**
-
-**Proje klasörünüzü sıkıştırdıktan sonra (`YourStudentID.zip` dosyası) 16 Nisan 2023 23:59'a kadar *ekampus.ankara.edu.tr* adresine yüklemeniz gerekmektedir.**
-
-\colorbox{WildStrawberry}{Daha fazla bilgi için proje klasöründeki README.md dosyasını okuyunuz.}
+[^1]: 21080802, [Github Repo](https://github.com/S-Merve/arasinav.git)
 
 # Giriş
-Bu taslak size proje ödevinizi yazarken yardımcı olması amacıyla oluşturulmuştur. Ödevlerinizde, makalelerinizde, sunumlarınızda ve projelerinizde kullandığınız tüm bilgi kaynaklarına atıfta bulunmalısınız. Alıntı ve gönderme yapmak okuyuculara çalışmanızda kullandığınız/başvurduğunuz  kaynaklara ulaşma imkanı sağlar. **Her ne kadar kendi sözlerinizi kullanıyor olsanız da, başkalarına ait fikirleri çalışmanızda aktarıyorsanız bu fikirlerin kaynağını belgelemek zorundasınız. Aksi takdirde akademik intihal yapmış olursunuz.** Yazım konusunda @aydinonat:2007'ye başvurabilirsiniz. 
-
-
-Proje ödevinizde yer alan başlıkların bu metinde yer alan başlıkları kesinlikle içermesi gerekmektedir (doğal olarak ilk bölüm başlığı hariç). Burada kullanılan başlıklar haricinde farklı alt başlıklar da kullanabilirsiniz. Projenizi yazarken bu dosyayı taslak olarak kullanıp içeriğini projenize uyarlayınız.
+White Star Line Şirketi tarafından 1909 yılında yapımına başlanan, döneminin en büyük buharlı yolcu gemisi olma özelliğini taşıyan _RMS Titanik_, 1912 yılında inşasının tamamlanmasının ardından 2000'in üzerinde yolcu ve mürettebat ile Southampton/Birleşik Krallık'tan demir alarak New York City/Amerika Birleşik Devletleri'ne gitmek üzere 10 Nisan 1912 tarihinde ilk seferine çıkmıştır.[@varmer2006rms] Ancak Titanik 15 Nisan 1912'de, ilk seferinin 4. gününde, bir buzdağına çarparak 2 saat 40 dakika içerisinde Kuzey Atlantik Okyanusunun buzlu sularına gömülmüştür.[@frey2009surviving] Her ne kadar Şirket, İngiliz bayraklı bu dev transatlantik yolcu gemisinin, dönemin en gelişmiş teknolojilerine ve oldukça deneyimli bir mürettebata sahip kılındığından, "*batmaz/batırılamaz*" olduğuna ilişkin oldukça iddialı bir güven vermekten kaçınmamışsa da [@frey2011perished] batmayacağına inanılan bu devasa gemi henüz ilk seferini bile tamamlamamışken bir buzdağına çarparak batmıştır. Günümüzden tam 111 yıl önce yaşanan ve binlerce kişinin, gemide bulunan mürettebat dahil tüm yolcuların 2/3'sinden fazla, hayatını kaybetmesine neden olan Titanik felaketi tarihteki en trajik ve en ünlü felaketlerden biridir.[@frey2011perished] 3000'e yakın kapasitesi olan bir gemide 2000'den az sayıda filika olması ve yaşanan panik ile birlikte bu filikaların da verimsiz kullanılması felaketin böyle büyük ve ölümcül olmasına sebep olmuştur.[@kakde2018predicting]
 
 ## Çalışmanın Amacı
-Bu bölümde yaptığınız çalışmanın amacından ve öneminden birkaç paragraf ile bahsediniz.
+Bu çalışmada Titanik gemisinden sağ kurtulmayı başarabilen yolcuların ortak ve ayrışan niteliklerine göre sağ kurtulma olasılıkları üzerinde durularak hangi değişkenlerin yolcuların hayatta kalmaları üzerinde nasıl etkili oldukları analiz edilecektir. Çalışmanın amacı, mevcut veri setinde yer alan değişkenler ile yolcuların Titanik felaketinden sağ kurtulmaları arasındaki ilişkiyi tespit etmektir. Ekonomik ve sosyal statü, cinsiyet, yaş gibi niteliklerin yolcuların hayatta kalmaları üzerinde etkileri bulunup bulunmadığı, bulunuyorsa nasıl ve ne şekilde etkiledikleri sorularına yanıt bulmak amaçlanmaktadır. Titanik, araştırmacılara yarı doğal bir deney alanı sunması bakımından da oldukça önemlidir.[@frey2009surviving]
+
+## Veri Seti
+Çalışmada kullanılmak üzere erişilmiş olan veri seti, Noah Rippner tarafından geliştirilen _Titanik Disaster Dataset_, [data.world](https://data.world/nrippner/titanic-disaster-dataset) web sitesinden elde edilmiş olup CSV (Comma Separated Values) dosya biçimindedir. Veri seti 1309 gözlem ve 14 değişkenden oluşmaktadır.
+
+* survival: Hayatta Kalma (0=No; 1=Yes)
+* class: Yolcu Sınıfı (1=1st; 2=2nd; 3=3rd)
+* name: Yolcu İsmi
+* sex: Cinsiyet
+* age: Yaş
+* sibsp: Gemideki Kardeş/Eş Sayısı
+* parch: Gemideki Ebeveyn/Çocuk Sayısı
+* ticket: Bilet Numarası
+* fare: Yolcu Ücreti
+* cabin: Kabin Numarası
+* embarked: Bindirme Limanı(C=Cherbourg; Q=Queenstown; S=Southampton)
+* boat: Cankurtaran Botu (Hayattaysa)
+* body: Ceset Numarası (Hayatta Değilse/Ceset Bulunduysa)
+* home.dest: Varış Yeri
 
 ## Literatür 
-Bu bölümde konu ile ilgili olarak okuduğunuz makaleleri referans vererek tartışınız. **Her makaleyi ayrı başlık altında tek tek özetlemeyiniz.** Literatür taramasında **en az dört** makaleye atıf yapılması ve bu makalelerden **en az ikisinin İngilizce** olması gerekmektedir.
-
-
-**_Taslakta bu cümleden sonra yer alan hiçbir şey silinmemelidir._**
+@frey2011perished hayatta kalanların bireysel ve sosyal niteliklerini incelediği ampirik bir analiz gerçekleştirmiş, tıpkı makine öğrenimi algoritmalarını kullanarak analiz yapan @kakde2018predicting gibi cinsiyetin hayatta kalma oranı üzerinde belirleyici etkisi bulunduğu, gemiden daha fazla kadının kurtulduğu ve fiziksel gücün hayatta kalma ile bir ilişkisi bulunmadığı sonucuna ulaşmıştır. @dasgupta2021predicting de diğer araştırmacılar gibi cinsiyetin, yaşın ve ekonomik sınıfın haaytta kalma oranı üzerindeki etkisini analiz ederek 18-30 yaş arası yolcular ile ekonomik durumu daha iyi olan 1.sınıfta seyahat eden yolcuların daha büyük olasılıkla kurtulduğunu tespit etmiş, birlikte seyahatlerde 0-3 kişiye kadar bu durumun hayatta kalmaya olumlu etkisi olduğu hususunda @kakde2018predicting ile aynı görüşü sunmuştur. @frey2009surviving, Titanik felaketini ekonomik, sosyal ve doğal faktörler bakımından ele alarak milliyeti de göz önünde tutmuş, davranışsal ekonomi, psikolojik ve sosyal eğilimlerin üzerinde durmuş, @frey2011perished ile benzer şekilde yüksek gelirin hayatta kalma oranını etkileyen olumlu bir değişken olduğunu, milliyetin ise İngiliz centilmenliği yansıtılsa da belirleyici bir etkisinin bulunmadığını ifade etmiştir. @gleicher2004survived de yaş, cinsiyet ve sınıf değişkenlerini lojistik regresyon analizi ile tek tek ve birlikte değerlendirerek karmaşık sınıf faktörleri içinde kadın ve çocukların kurtarıldığı, @frey2011perished gibi, önceliğin de doğurganlık çağındaki kadınlarda olduğu bulgularını edinmiştir. Literatürde, çeşitli istatistiksel metodoloji ve analiz teknikleri kullanılarak elde edilen sonuçlar ile Titanik felaketinden sağ kurtulan yolcuların temelde fazla finansal kaynağa sahip olan, genç-orta yaşlı, öncelikle kadın ve çocuklar oldukları üzerinde ortak bir kanıya varılmıştır.
 
 \newpage
 # Kaynakça {#references}
